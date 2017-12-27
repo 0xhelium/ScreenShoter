@@ -21,13 +21,13 @@ namespace ScreenShoter
                 ControlStyles.UserPaint,
                 true);
             this.BackColor = Color.FromArgb(255, 220, 220, 220);
-
-            this.btnOk.Click += (s, e) => 
+            
+            this.picOk.Click += (s, e) => 
             {
                 (this.ParentForm as Form1).SaveToClipboard();
                 (this.ParentForm as Form1).Close();
             };
-            this.btnExit.Click += (s, e) =>
+            this.picClose.Click += (s, e) =>
             {
                 (this.ParentForm as Form1).Close();
             };

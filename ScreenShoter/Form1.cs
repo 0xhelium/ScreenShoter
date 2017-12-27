@@ -71,6 +71,8 @@ namespace ScreenShoter
         private Rectangle? _rectBeforeMove = null;
         private string _corner = "";
 
+        public string _TEST { get; set; }
+
         private void Init()
         {
             var img = PrintScreen();
@@ -95,8 +97,8 @@ namespace ScreenShoter
         private void Draw(Graphics g)
         {
 #if SHOW_TEST_MSG
-            g.DrawString(string.Format("{5}.width:{0},height:{1},loc:{2}-{3},toolBarVisible:{4}", 
-                _rect.Width, _rect.Height, _rect.X, _rect.Y,_toolBtn.Visible,DateTime.Now.ToString("ss.fff")),
+            g.DrawString(string.Format("{5}.width:{0},height:{1},loc:{2}-{3},toolBarVisible:{4}|{6}", 
+                _rect.Width, _rect.Height, _rect.X, _rect.Y,_toolBtn.Visible,DateTime.Now.ToString("ss.fff"),_TEST),
                 new Font("微软雅黑", 13), new SolidBrush(Color.Black), new Point(0, 0));
 #endif
             Region reg = new Region(new RectangleF(new Point(0, 0), this.Size));         

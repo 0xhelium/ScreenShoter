@@ -28,44 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOk = new ScreenShoter.MyBtn();
-            this.btnExit = new ScreenShoter.MyBtn();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picOk = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOk)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnOk
+            // picClose
             // 
-            this.btnOk.Location = new System.Drawing.Point(396, 3);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(33, 21);
-            this.btnOk.TabIndex = 2;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
+            this.picClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.picClose.Location = new System.Drawing.Point(370, 3);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(24, 21);
+            this.picClose.TabIndex = 3;
+            this.picClose.TabStop = false;
             // 
-            // btnExit
+            // picOk
             // 
-            this.btnExit.Location = new System.Drawing.Point(356, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(33, 21);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.picOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.picOk.Location = new System.Drawing.Point(400, 3);
+            this.picOk.Name = "picOk";
+            this.picOk.Size = new System.Drawing.Size(24, 21);
+            this.picOk.TabIndex = 3;
+            this.picOk.TabStop = false;
             // 
             // ToolButtons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.picOk);
+            this.Controls.Add(this.picClose);
             this.Name = "ToolButtons";
             this.Size = new System.Drawing.Size(432, 28);
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOk)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private MyBtn btnOk;
-        private MyBtn btnExit;
+        private System.Windows.Forms.PictureBox picClose;
+        private System.Windows.Forms.PictureBox picOk;
     }
 }
