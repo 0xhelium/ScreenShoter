@@ -111,6 +111,7 @@ namespace ScreenShoter
                 g.FillRectangles(new SolidBrush(Color.Red), _dicRects.Values.Select(x => x).ToArray());
                 
                 DrawToolBtn(g);
+                DrawTip(g);
             }
             else
             {
@@ -163,11 +164,24 @@ namespace ScreenShoter
 
         private void DrawTip(Graphics g)
         {
-            //70*20
-            //if (_rect.X>)
-            //{
-            //
-            //}
+            if (_rect.Height == 0 && _rect.Width == 0)
+            {
+                return;
+            }
+            var rect = new Rectangle(_rect.X + 3, _rect.Y + 3, 70, 20);
+            if (_rect.Width < rect.Width || _rect.Height < rect.Height)
+            {
+                if (_rect.Y > 23)
+                {
+                    rect = new Rectangle(_rect.X, _rect.Y - 3 - rect.Height, 70, 20);
+                }
+            }
+            g.FillRectangle(new SolidBrush(Color.FromArgb(120, 0, 0, 0)), rect);
+            g.DrawString(string.Format("{0}×{1}", _rect.Width + 1, _rect.Height + 1),
+                new Font("微软雅黑", 8),
+                new SolidBrush(Color.White),
+                rect,
+                new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
         }
 
         #region - EVENTS -
