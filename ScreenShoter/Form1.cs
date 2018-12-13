@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ScreenShoter
+namespace ScreenShooter
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            _toolBtn = new ScreenShoter.ToolButtons();
+            _toolBtn = new ScreenShooter.ToolButtons();
             _toolBtn.Parent = this;            
 
             this.SetStyle(

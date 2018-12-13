@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ScreenShoter
+namespace ScreenShooter
 {
     static class Program
     {

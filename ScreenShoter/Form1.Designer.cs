@@ -1,4 +1,4 @@
-﻿namespace ScreenShoter
+﻿namespace ScreenShooter
 {
     partial class Form1
     {
