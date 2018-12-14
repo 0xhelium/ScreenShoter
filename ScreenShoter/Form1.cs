@@ -56,12 +56,12 @@ namespace ScreenShooter
             {
                 return new Dictionary<string, Rectangle> {
                     {"NW", new Rectangle(_rect.X-2,_rect.Y-2,5,5)                           },
-                    {"N", new Rectangle(_rect.X+_rect.Width/2-2,_rect.Y-2,5,5)              },
+                    {"N" , new Rectangle(_rect.X+_rect.Width/2-2,_rect.Y-2,5,5)             },
                     {"NE", new Rectangle(_rect.X+_rect.Width-2,_rect.Y-2,5,5)               },
-                    {"W", new Rectangle(_rect.X-2,_rect.Y+_rect.Height/2-2,5,5)             },
-                    {"E", new Rectangle(_rect.X+_rect.Width-2,_rect.Y+_rect.Height/2-2,5,5) },
+                    {"W" , new Rectangle(_rect.X-2,_rect.Y+_rect.Height/2-2,5,5)            },
+                    {"E" , new Rectangle(_rect.X+_rect.Width-2,_rect.Y+_rect.Height/2-2,5,5)},
                     {"SW", new Rectangle(_rect.X-2,_rect.Y+_rect.Height-2,5,5)              },
-                    {"S", new Rectangle(_rect.X+_rect.Width/2-2,_rect.Y+_rect.Height-2,5,5) },
+                    {"S" , new Rectangle(_rect.X+_rect.Width/2-2,_rect.Y+_rect.Height-2,5,5)},
                     {"SE", new Rectangle(_rect.X+_rect.Width-2,_rect.Y+_rect.Height-2,5,5)  },
                 };
             }
@@ -125,7 +125,7 @@ namespace ScreenShooter
         private void DrawToolBtn(Graphics g)
         {
             _toolBtn.Hide();
-            if (((_rect.Width > 0 || _rect.Height > 0)))
+            if (_rect.Width > 0 || _rect.Height > 0)
             {
                 var margin = 5;
                 var tw = _toolBtn.Width;
@@ -400,23 +400,33 @@ namespace ScreenShooter
                 if (_rect.Width > 0 && _rect.Height > 0)
                 {
                     Cursor = Cursors.Arrow;
-                    if (RectContainsPt(_rect,e.Location))
+                    var showSizeAllCursor = true;
+                    foreach (var r in _dicRects.Select(x => x.Value))
+                    {
+                        showSizeAllCursor = showSizeAllCursor && !RectContainsPt(r, e.Location);
+                        if (!showSizeAllCursor)
+                            break;
+                    }
+                    if (RectContainsPt(_rect, e.Location) && showSizeAllCursor)
                     {
                         Cursor = Cursors.SizeAll;
                     }
-                    foreach (KeyValuePair<string, Rectangle> kv in _dicRects)
+                    else
                     {
-                        if (RectContainsPt(kv.Value, e.Location))
+                        foreach (KeyValuePair<string, Rectangle> kv in _dicRects)
                         {
-                            _corner = kv.Key;
-                            if (kv.Key == "N" || kv.Key == "S")
-                                Cursor = Cursors.SizeNS;
-                            if (kv.Key == "W" || kv.Key == "E")
-                                Cursor = Cursors.SizeWE;
-                            if (kv.Key == "NW" || kv.Key == "SE")
-                                Cursor = Cursors.SizeNWSE;
-                            if (kv.Key == "NE" || kv.Key == "SW")
-                                Cursor = Cursors.SizeNESW;
+                            if (RectContainsPt(kv.Value, e.Location))
+                            {
+                                _corner = kv.Key;
+                                if (kv.Key == "N" || kv.Key == "S")
+                                    Cursor = Cursors.SizeNS;
+                                if (kv.Key == "W" || kv.Key == "E")
+                                    Cursor = Cursors.SizeWE;
+                                if (kv.Key == "NW" || kv.Key == "SE")
+                                    Cursor = Cursors.SizeNWSE;
+                                if (kv.Key == "NE" || kv.Key == "SW")
+                                    Cursor = Cursors.SizeNESW;
+                            }
                         }
                     }
                 }
