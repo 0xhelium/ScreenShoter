@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
-namespace ScreenShooter
+namespace ScreenShoter
 {
     public partial class ToolButtons : UserControl
     {
@@ -21,23 +22,35 @@ namespace ScreenShooter
                 ControlStyles.UserPaint,
                 true);
 
-            this.BackColor = Color.FromArgb(255, 220, 220, 220);
-            this.picOk.Paint += (s, e) => {
-                e.Graphics.DrawString("√", new Font("微软雅黑", 12), new SolidBrush(Color.Black), new PointF(3f, 0));
-            };
-            this.picClose.Paint += (s, e) => {
-                e.Graphics.DrawString("×", new Font("微软雅黑", 12), new SolidBrush(Color.Black), new PointF(3f, 0));
-            };
+            this.Cursor = Cursors.Default;
+            picOk.Cursor = Cursors.Hand;
+            picClose.Cursor = Cursors.Hand;
 
             this.picOk.Click += (s, e) => 
             {
-                (this.ParentForm as Form1).SaveToClipboard();
-                (this.ParentForm as Form1).Close();
+                SaveImg();
             };
             this.picClose.Click += (s, e) =>
             {
-                (this.ParentForm as Form1).Close();
+                (this.ParentForm as FormShot).ShowParent();
             };
+            this.picSave.Click += (s, e) =>
+            {
+                var sfd = new SaveFileDialog();
+                sfd.FileName = $"screenshot_{DateTime.Now.ToString("yyyyMMddHHmmssff")}.png";
+                sfd.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
+                var dr = sfd.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    SaveImg(Path.Combine(sfd.InitialDirectory, sfd.FileName));
+                }
+            };
+        }
+
+        private void SaveImg(string fileName = "")
+        {
+            (this.ParentForm as FormShot).SaveToClipboard(fileName);
+            (this.ParentForm as FormShot).ShowParent();
         }
     }
 }

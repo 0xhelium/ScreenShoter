@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShooter", "ScreenShoter\ScreenShooter.csproj", "{62B7A6E7-57C3-49D6-B522-CD73736CD42D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShoter.Wpf", "ScreenShoter.Wpf\ScreenShoter.Wpf.csproj", "{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{62B7A6E7-57C3-49D6-B522-CD73736CD42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B7A6E7-57C3-49D6-B522-CD73736CD42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62B7A6E7-57C3-49D6-B522-CD73736CD42D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

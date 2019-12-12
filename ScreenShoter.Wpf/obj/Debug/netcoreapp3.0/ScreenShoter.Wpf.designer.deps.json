@@ -1,0 +1,43 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "MaterialDesignColors/1.2.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/3.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MaterialDesignColors/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CIP/WMSciFagxWmk6yGHP/6tcBxxC+ZEYBGbO15Emj2EN8MRS07nhKP4D3uYm4R3Aqmd2EoC0h3m8aRKVgUAKA==",
+      "path": "materialdesigncolors/1.2.1",
+      "hashPath": "materialdesigncolors.1.2.1.nupkg.sha512"
+    },
+    "MaterialDesignThemes/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X8G+OklkHX8N5HRYf9Z1MLujxaWK/1QaqKZkKlMVBubpo0OhH4g8jpWMcoRGRtPx5F8ebE5VR7EjzuSr4HO+Vg==",
+      "path": "materialdesignthemes/3.0.0",
+      "hashPath": "materialdesignthemes.3.0.0.nupkg.sha512"
+    }
+  }
+}
