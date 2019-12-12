@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0A190C7D-00A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{A60F3949-A6B4-4EC5-A75E-7A7BC65EE371}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\user\Desktop\20191212112347.png = C:\Users\user\Desktop\20191212112347.png
+		20191212112347.png = 20191212112347.png
 	EndProjectSection
 EndProject
 Global
