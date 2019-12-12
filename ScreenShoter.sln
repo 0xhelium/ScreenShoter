@@ -5,7 +5,14 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShooter", "ScreenShoter\ScreenShooter.csproj", "{62B7A6E7-57C3-49D6-B522-CD73736CD42D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShoter.Wpf", "ScreenShoter.Wpf\ScreenShoter.Wpf.csproj", "{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenShoter.Wpf", "ScreenShoter.Wpf\ScreenShoter.Wpf.csproj", "{7CF72E7E-4174-47A1-9E3F-F375EE6B9320}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0A190C7D-00AB-4938-A873-F9E369D1EB5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{A60F3949-A6B4-4EC5-A75E-7A7BC65EE371}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\user\Desktop\20191212112347.png = C:\Users\user\Desktop\20191212112347.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +31,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62B7A6E7-57C3-49D6-B522-CD73736CD42D} = {0A190C7D-00AB-4938-A873-F9E369D1EB5A}
+		{7CF72E7E-4174-47A1-9E3F-F375EE6B9320} = {0A190C7D-00AB-4938-A873-F9E369D1EB5A}
+		{A60F3949-A6B4-4EC5-A75E-7A7BC65EE371} = {0A190C7D-00AB-4938-A873-F9E369D1EB5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3657E61D-40BC-4545-BD10-09A877E995E8}
